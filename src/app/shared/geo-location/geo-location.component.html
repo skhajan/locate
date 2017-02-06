@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-12" *ngIf="weather != null">
+        <div class="weather">
+            <div class="current">
+                <div class="info">
+                    <div>&nbsp;</div>
+                    <div class="city"><small><small>LOCATION: </small></small>{{weather.city}}, {{weather.country}} </div>
+                    <div class="temp">{{weather.temprature.farenhight}}<span class="wi wi-fahrenheit"></span>, {{weather.temprature.humidity}} <span class="wi wi-humidity"></span></div>
+                    <div class="pressure">PRESSURE: <span>{{weather.temprature.pressure}}</span></div>
+                    <div class="wind"><small>WIND: </small><span class="wi wi-windy"></span> {{weather.wind.speed}} km/h</div>
+                    <div class="sunrise sunset"><small>DATE: </small><small>{{weather.currentDate | date:'dd/MM/yyyy'}} </small>
+                    &nbsp;
+                    <span class="wi wi-sunrise"></span> {{weather.sunrise|date:'HH:mm a'}} &mdash;
+                    <span class="wi wi-sunset"></span> {{weather.sunset|date:'HH:mm a'}} </div>
+                    <div>&nbsp;</div>
+                </div>
+                <div class="icon">
+                    <span class="wi wi-{{weather.weatherIcon}}"></span>
+                </div>
+            </div>
+            <div class="future">
+                <div class="day" *ngFor="let day of weekdays; let i = index" [ngClass]="{'active': weather.currentDate.getDay() == i}">
+                    <h3>{{day}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

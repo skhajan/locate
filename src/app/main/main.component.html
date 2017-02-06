@@ -1,0 +1,11 @@
+<div class="container">
+	<h1>Current Weather</h1>
+	<div class="input-group" *ngIf="isPermissionGranted == false">
+      <input type="text" class="form-control" placeholder="Enter Zip Code or Conuntry Code" [(ngModel)]="value">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" (click)="loadWeather()" >Go!</button>
+      </span>
+    </div>
+    <br/>
+	<geo-location [location]="location"></geo-location>
+</div>

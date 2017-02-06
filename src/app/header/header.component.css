@@ -1,0 +1,18 @@
+header{
+	background-color: black;
+}
+
+header .navbar-brand{
+	padding: 0;
+	width: 200px;
+}
+
+header .navbar-brand > img{
+	width: 50px;
+	padding: 5px;
+	float: left;
+}
+
+header .navbar-brand > p{
+	padding: 15px;
+}
